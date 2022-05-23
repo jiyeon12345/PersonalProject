@@ -24,7 +24,6 @@
 <script>
 import MainPageForm from '@/components/layout/MainPageForm.vue'
 import FooterForm from '@/components/layout/FooterForm.vue'
-import axios from 'axios'
 import SwiperPage from '@/components/mainPage/SwiperPage.vue'
 import { mapState, mapActions} from 'vuex'
 

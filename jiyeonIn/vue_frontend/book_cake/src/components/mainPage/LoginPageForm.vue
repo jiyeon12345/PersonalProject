@@ -25,7 +25,9 @@
                 
                 <v-btn @click="signUp" color="black" text type="button" width="210">
                 <v-icon>mdi-account-circle</v-icon>회원가입</v-btn>
-                    
+                <div >
+                    <v-btn :class="{red:isRed, black:isBlack}" @click="update" >hi!</v-btn>
+                </div>
                 
             </div>
         </form>
@@ -44,7 +46,9 @@ export default {
             ],
             rules_pw: [
                 v => !!v || '비밀번호를 입력해주세요',
-            ]
+            ],
+            isRed: false,
+            isBlack: false
         }
     },
     methods: {
@@ -56,6 +60,10 @@ export default {
             this.$router.push({
                     name: 'SignUpPage'
                 })
+        },
+        update(){
+            this.isRed = !this.isRed;
+            this.isBold = !this.isBold;
         }
     }
 }
@@ -107,5 +115,11 @@ form {
     width: 306px;
     height: 350px;
 }
+
+.red {
+    background-color: red;
+}
+
+
 
 </style>

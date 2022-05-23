@@ -35,6 +35,7 @@ public class ReviewServiceImpl implements ReviewService{
 
         Optional<Member> findMemberNo = memberRepository.findByUserId(info.getId());
         Member member = findMemberNo.get();
+        log.info("member no: "+ member.getMemberNo());
 
         Review review = new Review(info.getId(), info.getContent(), file, member);
         repository.save(review);
@@ -45,6 +46,7 @@ public class ReviewServiceImpl implements ReviewService{
     public void exceptImgReview(ReviewRequest info) {
         Optional<Member> findMemberNo = memberRepository.findByUserId(info.getId());
         Member member1 = findMemberNo.get();
+        log.info("member no: "+ member1.getMemberNo());
 
         Review review = new Review(info.getId(), info.getContent(), member1);
         repository.save(review);

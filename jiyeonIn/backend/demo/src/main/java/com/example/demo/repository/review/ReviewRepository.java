@@ -13,7 +13,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     @Query(value = "select * from review where review_no = :reviewNo",nativeQuery = true)
     Optional<Review> findInfo(Long reviewNo);
 
-    @Query(value = "select * from review where id = :checkId",nativeQuery = true)
+    @Query(value = "select * from review where id = :checkId order by review_no desc",nativeQuery = true)
     public List<Review> findIdList(String checkId);
 
 
